@@ -38,4 +38,7 @@ Route::get('/prueba3/{id}', function($id) {
 })->where('id', '[0-9]+'); //where(['id'=>'[0-9]+', 'username'=>'[A-Za-z]+']);
 
 //nombre (alias) para ruta
-Route::get('/prueba4{id?}', 'WelcomeController@show')->name('pruebita');
+Route::get('/pruebas/{id?}', 'WelcomeController@show')->name('pruebas.show'); //convencion para nombres
+                                            //de ruta de controlador: resourcePluaral.action
+
+Route::get('/home', 'TaskController@home');

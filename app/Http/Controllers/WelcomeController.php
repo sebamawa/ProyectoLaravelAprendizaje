@@ -45,7 +45,8 @@ class WelcomeController extends Controller
      */
     public function show($id=-1)
     {
-        return 'show(): id = ' . $id . ' - route(): ' . route('pruebita');
+        return 'show(): id = ' . $id . ' - route(): ' . route('pruebas.show', [$id]);
+        //si la ruta tiene parametros pasarle al helper route() un array como segundo parametro
     }
 
     /**
