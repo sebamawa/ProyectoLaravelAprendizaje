@@ -42,3 +42,6 @@ Route::get('/pruebas/{id?}', 'WelcomeController@show')->name('pruebas.show'); //
                                             //de ruta de controlador: resourcePluaral.action
 
 Route::get('/home', 'TaskController@home');
+
+//rutas a resource controller
+Route::resource('productos', 'ProductoController');
