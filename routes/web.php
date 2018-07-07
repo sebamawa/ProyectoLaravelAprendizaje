@@ -43,5 +43,5 @@ Route::get('/pruebas/{id?}', 'WelcomeController@show')->name('pruebas.show'); //
 
 Route::get('/home', 'TaskController@home');
 
-//rutas a resource controller
-Route::resource('productos', 'ProductoController');
+//rutas de resource controller
+Route::resource('/customers', 'CustomerController');

@@ -2,10 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use App\Producto;
 use Illuminate\Http\Request;
 
-class ProductoController extends Controller
+class CustomerController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,14 +13,7 @@ class ProductoController extends Controller
      */
     public function index()
     {
-        //return 'Lista de productos';
-        $productos = Producto::all();
-        //return $productos;
-        foreach ($productos as $p) {
-            echo $p->descripcion . '<br>';
-        }
-        //$producto = $productos[0];
-        //return $producto->descripcion;
+        return "index() de CustomerController";
     }
 
     /**
@@ -31,7 +23,7 @@ class ProductoController extends Controller
      */
     public function create()
     {
-        return view('productos.create');
+        return "create() de CustomerController. Desde aqui se redirigira a form para ingresar Customers";
     }
 
     /**
@@ -42,8 +34,7 @@ class ProductoController extends Controller
      */
     public function store(Request $request)
     {
-        $producto = Producto::create($request->all());
-        //return view('productos');
+        //
     }
 
     /**
