@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
+use App\Customer;
+
 class CustomerController extends Controller
 {
     /**
@@ -13,7 +15,8 @@ class CustomerController extends Controller
      */
     public function index()
     {
-        return "index() de CustomerController";
+        $customers = Customer::all();
+        return view('customers.index', compact('customers'));
     }
 
     /**
@@ -23,7 +26,7 @@ class CustomerController extends Controller
      */
     public function create()
     {
-        return "create() de CustomerController. Desde aqui se redirigira a form para ingresar Customers";
+        return view('customers.create');
     }
 
     /**
@@ -34,7 +37,9 @@ class CustomerController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $customer = Customer::create($request->all());
+
+        return redirect()->route('customers.index');
     }
 
     /**

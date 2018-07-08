@@ -1,14 +1,23 @@
-<!DOCTYPE>
-<html lang="en">
-<head>
-    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
-    <title>Home</title>
-</head>
-<body>
-    <h3>Vista home personalizada. Se retorna desde controlador TaskController.home</h3>
+@extends('layouts.app')
 
-    @foreach($nombres as $nombre)
-        <p>{{ $nombre }}</p>
-    @endforeach
-</body>
-</html>
+@section('content')
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <div class="card">
+                <div class="card-header">Dashboard</div>
+
+                <div class="card-body">
+                    @if (session('status'))
+                        <div class="alert alert-success" role="alert">
+                            {{ session('status') }}
+                        </div>
+                    @endif
+
+                    You are logged in!
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+@endsection
