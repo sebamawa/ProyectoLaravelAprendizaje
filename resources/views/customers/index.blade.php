@@ -6,19 +6,22 @@
 
 <div class="container">
 
-    <div class="row justify-content-center">
-        <div class="col-8">
+    <div class="row  justify-content-center">
+        <div class="col-10">
 
             <div class="card">
                 <div class="card-header">
                     Lista de clientes: <span id="customers_total">{{ $customers->count() }} </span> registros
-                    <a href="{{ route('customers.create') }}" class="btn btn-primary float-right">
-                        Crear
-                    </a>
+                    @guest
+                    @else
+                        <a href="{{ route('customers.create') }}" class="btn btn-primary float-right">
+                            Crear
+                        </a>
+                    @endguest
                 </div>
-                <div class="card-body">
+                <div class="body">
                     @foreach($customers as $customer)
-                        {{ $customer->id }} - {{ $customer->name }} <br>
+                        {{$customer->name}}<br>
                     @endforeach
                 </div>
             </div>

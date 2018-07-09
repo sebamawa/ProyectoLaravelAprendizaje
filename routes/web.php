@@ -49,3 +49,7 @@ Route::resource('/customers', 'CustomerController');
 //rutas generadas al usar el modulo de auth (php artisan make:auth)
 Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
